@@ -18,4 +18,4 @@ jobs:
     - stage: test image
       script:
         - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-        - docker run --rm colachen/dnscrypt-rpi dnscrypt-proxy -version
+        - docker run --rm colachen/dnscrypt-rpi -version
