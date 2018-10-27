@@ -12,6 +12,7 @@ RUN set -ex &&\
     rm -rf /var/cache/* /tmp/*
 
 WORKDIR /dnscrypt
+COPY dnscrypt-proxy.toml .
 
 ENTRYPOINT ["/usr/local/bin/dnscrypt-proxy"]
 
