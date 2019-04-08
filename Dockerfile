@@ -2,7 +2,7 @@ FROM resin/raspberrypi3-alpine
 
 MAINTAINER colachg <colachg@gmail.com>
 
-ARG VERSION=2.0.18
+ARG VERSION=2.0.22
 ARG URL=https://github.com/jedisct1/dnscrypt-proxy/releases/download/$VERSION/dnscrypt-proxy-linux_arm-$VERSION.tar.gz
 
 RUN set -ex &&\
@@ -13,6 +13,8 @@ RUN set -ex &&\
 WORKDIR /dnscrypt
 
 COPY dnscrypt-proxy.toml .
+
+EXPOSE 53 53/UDP
 
 ENTRYPOINT ["/usr/local/bin/dnscrypt-proxy"]
 
