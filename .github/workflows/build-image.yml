@@ -11,12 +11,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-
       - name: build docker image
         run: |
           docker run --rm --privileged multiarch/qemu-user-static:register --reset;
           docker build . -t colachen/dnscrypt-rpi:v`date +%Y%m%d` -t colachen/dnscrypt-rpi:latest
-
       - name: push image to dockerhub
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
@@ -32,7 +30,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-
       - name: test binary version
         run: |
           docker run --rm --privileged multiarch/qemu-user-static:register --reset
