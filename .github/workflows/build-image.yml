@@ -33,4 +33,4 @@ jobs:
       - name: test binary version
         run: |
           docker run --rm --privileged multiarch/qemu-user-static:register --reset
-          docker run --rm colachen/dnscrypt-rpi:latest dnscrypt-proxy --version
+          docker run --rm colachen/dnscrypt-rpi:latest --version
