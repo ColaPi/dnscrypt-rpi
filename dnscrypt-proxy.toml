@@ -27,7 +27,7 @@
 ## The proxy will automatically pick the fastest, working servers from the list.
 ## Remove the leading # first to enable this; lines starting with # are ignored.
 
-server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare', 'vultr-1', 'vultr-2']
+server_names = ['scaleway-fr', 'google', 'yandex', 'cloudflare']
 
 
 ## List of local addresses and ports to listen to. Can be IPv4 and/or IPv6.
@@ -510,11 +510,5 @@ cache_neg_max_ttl = 600
 ## Mostly useful for testing your own servers.
 
 [static]
-   [static.'google']
-   stamp = 'sdns://AgUAAAAAAAAAACDyXGrcc5eNecJ8nomJCJ-q6eCLTEn6bHic0hWGUwYQaA5kbnMuZ29vZ2xlLmNvbQ0vZXhwZXJpbWVudGFs'
-   
-   [static.'vultr-1']
-   stamp = 'sdns://AQcAAAAAAAAAFDEwOC42MS4xODIuMTU3OjE1MzUzIKtfF987cZHHCWXWIZPqMZ4xhi3rSxMek4EPOfk609pMHjIuZG5zY3J5cHQtY2VydC52dWx0ci5scmZ6LmNvbQ'
-   
-   [static.'vultr-2']
-   stamp = 'sdns://AQcAAAAAAAAAETQ1Ljc3LjIzLjIzMDo1MzUzIM401LmYoABi-nwEWoGyvmqn4fV3NL4tY9eVCx5qF4oLGzIuZG5zY3J5cHQtY2VydC5jb2xhY2hnLmNvbQ'
+  #  [static.'google']
+  #  stamp = 'sdns://AgUAAAAAAAAAACDyXGrcc5eNecJ8nomJCJ-q6eCLTEn6bHic0hWGUwYQaA5kbnMuZ29vZ2xlLmNvbQ0vZXhwZXJpbWVudGFs'

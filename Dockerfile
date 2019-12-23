@@ -1,9 +1,10 @@
-FROM resin/raspberrypi3-alpine
+FROM balenalib/raspberrypi3-alpine
 
-MAINTAINER colachg <colachg@gmail.com>
+LABEL MAINTAINER = colachg <colachg@gmail.com>
 
-ARG VERSION=2.0.22
-ARG URL=https://github.com/jedisct1/dnscrypt-proxy/releases/download/$VERSION/dnscrypt-proxy-linux_arm-$VERSION.tar.gz
+ENV VERSION=2.0.36
+ENV LOCAL_PORT=53
+ENV URL=https://github.com/jedisct1/dnscrypt-proxy/releases/download/$VERSION/dnscrypt-proxy-linux_arm-$VERSION.tar.gz
 
 RUN set -ex &&\
     apk add --update --no-cache --virtual .build curl &&\
@@ -14,7 +15,7 @@ WORKDIR /dnscrypt
 
 COPY dnscrypt-proxy.toml .
 
-EXPOSE 53 53/UDP
+EXPOSE $LOCAL_PORT/tcp $LOCAL_PORT/udp
 
 ENTRYPOINT ["/usr/local/bin/dnscrypt-proxy"]
 
