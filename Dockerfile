@@ -2,7 +2,7 @@ FROM balenalib/raspberrypi3-alpine
 
 LABEL MAINTAINER = colachg <colachg@gmail.com>
 
-ENV VERSION=2.0.36
+ENV VERSION=2.0.39
 ENV LOCAL_PORT=53
 ENV URL=https://github.com/jedisct1/dnscrypt-proxy/releases/download/$VERSION/dnscrypt-proxy-linux_arm-$VERSION.tar.gz
 
